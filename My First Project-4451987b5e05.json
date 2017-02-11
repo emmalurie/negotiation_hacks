@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "canvas-cursor-158418",
+  "private_key_id": "4451987b5e05eb538060a5b2c951943f69a31bc1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQChDs2cnqrzFQU4\nu4uIorpy4ojZ054K6kWA788JuanT1zxGMGT+YN7Q2XUF6fHFZSMefbeNfgvXutFS\nUwkfTiD0aMOIOj+seOXk6LyFhd3p5ANBRkIA39+tgqYWST6QDTnhcS4UZoA/76sQ\n5DNK9VifNizkY0WtfHx4D4184H5K1GKUXzp5e9S7iZzHCLM1hwolL3ZBEDkYGt0U\nJML92NzUHSVE9edNnmLMMDTSziD1WEdSl11q4wieOx7B1VdXg9wFLL5SwXeu7oOd\nBw9oKY0c2h17H9jbJrVb03BYaGQoEzQqps+umZFR22zsKnsI8fxmksImHkW/bCAK\n4y3miJdxAgMBAAECggEAenFmn8uA64zvi1IJorcUSIMwx2m6nVG9xWiLXjlog0T+\n7d2c6kd7Hgw0i2pwBEH/kQ7CnS9WkYvV12CJbuNW6nk7LjYacmT3YjAOIvTC4S4X\ny2g+hautwZux6P+GML3dYydIgPnsRq9Ovmi/Fh2wYlothvRx5JLfjedFCcsiOIBK\nMFlwnvIeZER865KCPP925uDqIETwuDZqfWJHSUeqHl6dTodSSmHLwB9UKMecBRCV\n9M31HAYVZFE1IsHPHW0mNz1hruz/arWycpwfeH1TWqaEfDJ4ANZmQBmyLMO9Zsmo\nIJzatjLQKJjV1dPkA4wqL3g8XwEa3FrTYbXhvQ2WgQKBgQDMwgA1HH29JibV0Elr\nhWZUE4OdFdOIseyy5cHB8yG5wBjCoicYwNlyb3SGT0MxSoZfeNDW8LGgEhMcIBw5\nNqNjgmt0hHAjY66tdSgiRPnpN8RTx/EuMAX0Vj9Y2sfrVQSSvMRLVk4Wapgxu8yl\nGl0L6oO5bVCA40OtN0DZTZNvvwKBgQDJXR84s3Z12EobuK6aT5rvv1brvfxQZKn1\nTRFDknLNtr8v7W4f2KCnL6AemxOLJGzQT6TEvaEfqBLVenk7PAZuyZndOe/BWJ+K\n+UPzcaFbbWt0Wkc5xytnoHYS2pNEKAZ/V3+Pl4bNdxUztvm8fbUYS98gm4za57hm\nBROY5f3EzwKBgQC9rHSOvn7HyeCtrg1lGaTp+02vJTnX5aHzMpxi8rtqG0WUfqsi\n5fpIZHCXvjLrJTMGm58xjLOuKTAknKYoZbHDC1xJCinqzntQWTe9TxIF9U/boFqN\nQ5UwevihccFCAXaEC3L2qtMZNtMXNvVid+J7mFk/WsD5NA1MFuPuqEsMdwKBgEjF\nAnd3Q6Qq2f1SrKbPheqGd18SdZCIEHO5ujd1QU/ebxFe+KFBpC1HJNJqsJFkRH6z\niZQgA45xKv1DGXSyqJB5AsXUHjT9VgrfMhNUST/FN0QBLCRROfplHsaJfxbucAqt\nEEhQNkMieeMKiQ35T+zL3oLmM+0YOKeFxiNHWoI5AoGATCu/Fu1dHmqI2Ab1mcum\ns45EO1eA/4wKYSPh6lsP3ru4gVgVfl46/p0gJJR8/oyvLiTlndX4pj/obtlI35CC\nbBuFGut4QHUiIyHErZSwpduGvsdUoA5tSek2MtT8DRzo9W0QCoUFooXU+ojSheb9\nVsXPxze0TWiYBko2J/dHGa4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "hackingnegotiation@canvas-cursor-158418.iam.gserviceaccount.com",
+  "client_id": "114127757523007358204",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/hackingnegotiation%40canvas-cursor-158418.iam.gserviceaccount.com"
+}
