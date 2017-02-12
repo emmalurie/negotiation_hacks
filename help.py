@@ -51,12 +51,12 @@ class myHandler(BaseHTTPRequestHandler):
 		return "Your language is appropriate for this conversation."
 
 	def check_threat(self, cList):
-		threat =  ["leave", "quit", "abandon"]
+		threat =  ['leave', 'quit', 'abandon']
 		for elem in cList:
 			if elem in threat:
 				return "We advise that you are more positive in your conversation instead of threatening to quit."
-			else:
-				return "Good job in staying positive!"
+							
+		return "Good job in staying positive!"
 
 	def check_fam(self, cList):
 		num = 0
