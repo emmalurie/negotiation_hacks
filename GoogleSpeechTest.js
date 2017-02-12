@@ -1,6 +1,8 @@
 var fs = require('fs');
-fs.watchFile('~/downloads/video.webm', (curr, prev) => {
-	
+
+var negotiate = function () {
+
+	if(fs.existsSync('../../../../downloads/video.webm')){
 //var fs = require('fs'),
     cloudconvert = new (require('cloudconvert'))('hwcepP9agCGP-8xWIa-lqjhc8KnPjAtnegMRNSy3q1qDHLow25ckwIueVyx73PWXr2oV0b9MxkBRoskc9VPVZg');
  
@@ -13,7 +15,7 @@ fs.createReadStream('../../../../downloads/video.webm')
 }))
 
 .pipe(fs.createWriteStream('outputfile.flac')).on('finish', function(file){
-	
+
 
 // Imports the Google Cloud client library
 const Speech = require('@google-cloud/speech');
@@ -49,5 +51,10 @@ speechClient.recognize(fileName, options)
     console.log(`Transcription: ${transcription}`);
 });
 });
-});
 
+fs.unlinkSync('../../../../downloads/video.webm');
+};
+
+setTimeout(negotiate, 1000);
+};
+negotiate();
