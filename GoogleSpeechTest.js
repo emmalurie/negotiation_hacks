@@ -2,16 +2,16 @@ var fs = require('fs');
 
 var negotiate = function () {
 
-	if(fs.existsSync('../../../../downloads/video.webm')){
+  if(fs.existsSync('../../../../downloads/video.webm')){
 //var fs = require('fs'),
-    cloudconvert = new (require('cloudconvert'))('hwcepP9agCGP-8xWIa-lqjhc8KnPjAtnegMRNSy3q1qDHLow25ckwIueVyx73PWXr2oV0b9MxkBRoskc9VPVZg');
- 
+cloudconvert = new (require('cloudconvert'))('hwcepP9agCGP-8xWIa-lqjhc8KnPjAtnegMRNSy3q1qDHLow25ckwIueVyx73PWXr2oV0b9MxkBRoskc9VPVZg');
+
 fs.createReadStream('../../../../downloads/video.webm')
 .pipe(cloudconvert.convert({
-    "inputformat": "webm",
-    "outputformat": "flac",
-    "input": "upload",
-	"wait": "true"
+  "inputformat": "webm",
+  "outputformat": "flac",
+  "input": "upload",
+  "wait": "true"
 }))
 
 .pipe(fs.createWriteStream('outputfile.flac')).on('finish', function(file){
@@ -39,16 +39,16 @@ const options = {
 
 // Detects speech in the audio file
 speechClient.recognize(fileName, options)
-  .then((results) => {
-    const transcription = results[0];
-	fs.writeFile('log.txt', transcription, function (err) {
-  if (err) {
-    // append failed
-  } else {
-    // done
-  }
+.then((results) => {
+  const transcription = results[0];
+  fs.writeFile('log.txt', transcription, function (err) {
+    if (err) {
+  // append failed
+} else {
+  // done
+}
 })
-    console.log(`Transcription: ${transcription}`);
+  console.log(`Transcription: ${transcription}`);
 });
 });
 
