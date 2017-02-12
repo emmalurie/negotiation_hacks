@@ -122,6 +122,7 @@ function startRecording(stream) {
 //}
 
 function onBtnRecordClicked (){
+	log("Recording Finished...");
 	 if (typeof MediaRecorder === 'undefined' || !navigator.getUserMedia) {
 		alert('MediaRecorder not supported on your browser, use Firefox 30 or Chrome 49 instead.');
 	}else {

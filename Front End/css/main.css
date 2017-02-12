@@ -229,8 +229,8 @@ strong {
 video {
   background: #7F909D;
   margin: 10px auto;
-  width: 320px;
-  height:240px;
+  width: 480px;
+  height:360px;
 }
 
 @media screen and (max-width: 650px) {
