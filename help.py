@@ -44,7 +44,7 @@ class myHandler(BaseHTTPRequestHandler):
 			return "Nice job avoiding using the common filler word 'like'!"
 
 	def check_profanity(self, cList):
-		profanity = ["shit", "fuck", "damn", "bitch", "tits", "screwed", "hell", "piss", "bastard", "shut up", "stupid", "ass"]
+		profanity = ["shit", "fuck", "fucking","damn", "bitch", "tits", "screwed", "hell", "piss", "bastard", "shut up", "stupid", "ass"]
 		for elem in cList:
 			if elem in profanity:
 				return "Please refrain from using profanity while negotiating."
