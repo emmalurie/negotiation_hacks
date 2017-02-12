@@ -1,16 +1,19 @@
-
-var fs = require('fs'),
+var fs = require('fs');
+fs.watchFile('~/downloads/video.webm', (curr, prev) => {
+	
+//var fs = require('fs'),
     cloudconvert = new (require('cloudconvert'))('hwcepP9agCGP-8xWIa-lqjhc8KnPjAtnegMRNSy3q1qDHLow25ckwIueVyx73PWXr2oV0b9MxkBRoskc9VPVZg');
  
-fs.createReadStream('hello_world.webm')
+fs.createReadStream('../../../../downloads/video.webm')
 .pipe(cloudconvert.convert({
     "inputformat": "webm",
     "outputformat": "flac",
     "input": "upload",
 	"wait": "true"
 }))
-.pipe(fs.createWriteStream('outputfile.flac')).on('finish', function(file){
 
+.pipe(fs.createWriteStream('outputfile.flac')).on('finish', function(file){
+	
 
 // Imports the Google Cloud client library
 const Speech = require('@google-cloud/speech');
@@ -36,7 +39,7 @@ const options = {
 speechClient.recognize(fileName, options)
   .then((results) => {
     const transcription = results[0];
-	fs.appendFile('log.txt', transcription, function (err) {
+	fs.writeFile('log.txt', transcription, function (err) {
   if (err) {
     // append failed
   } else {
@@ -46,6 +49,5 @@ speechClient.recognize(fileName, options)
     console.log(`Transcription: ${transcription}`);
 });
 });
-
-
+});
 
