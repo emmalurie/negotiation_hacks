@@ -145,33 +145,33 @@ p#data {
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<h2 class="service-title pad-bt15">How did you do?</h2>
-					<p class="sub-title pad-bt15">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore et dolore magna aliqua.</p>
+					<p class="sub-title pad-bt15">Here are some tips to help you improve</p>
 					<hr class="bottom-line">
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<div class="service-item">
-						<h3>Design</h3>
+						<h3>Delivery</h3>
+						<p class = "feedback">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<a href="">learn more...</a>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="service-item">
+						<h3>Word Usage</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 						<a href="">learn more...</a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<div class="service-item">
-						<h3>website Maintenance</h3>
+						<h3>Topic</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 						<a href="">learn more...</a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<div class="service-item">
-						<h3>seo Optimization</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						<a href="">learn more...</a>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-12">
-					<div class="service-item">
-						<h3>Digital Marketing</h3>
+						<h3>Blah</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 						<a href="">Learn more...</a>
 					</div>
@@ -179,8 +179,6 @@ p#data {
 			</div>
 		</div>
 	</section>
-	<!---->
-	<!---->
 	<!---->
 	<!---->
 	<!-- <section id="portfolio" class="section-padding wow fadeInUp delay-05s">
@@ -326,7 +324,7 @@ p#data {
 	<footer id="footer">
 		<div class="container">
 			<div class="row text-center">
-				<p>&copy; 2017, </p>
+				<p>&copy; 2017 Emma Lurie, Maxine Hood, Amber Skarjune, Sherry Xu </p>
 				<div class="credits">
 					<!--
 							All the links in the footer should remain intact.
@@ -345,7 +343,14 @@ p#data {
 <script>
 
 function request() {
-    variable = new XMLHttpRequest();
+    var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function(){
+			if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }};
+		xhttp.open("GET", "ajax_info.txt", true);
+		xhttp.send();
+	}
 }
 
 // setTimeout(function(){ request(); }, 10000);

@@ -93,7 +93,7 @@ function startRecording(stream) {
 
 		downloadLink.href = videoURL;
 		videoElement.src = videoURL;
-		downloadLink.innerHTML = 'Download video file';
+		downloadLink.innerHTML = 'Download your pitch';
 
 		// var rand =  Math.floor((Math.random() * 10000000));
 		var name  = "video.webm" ;

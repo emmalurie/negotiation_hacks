@@ -266,3 +266,15 @@ button:hover{
     background-color: #192a37;
     color: white;
 }
+
+a#downloadLink{
+  color: #fff;
+  padding-top: 20px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+a#downloadLink:hover{
+  color: #be9e21;
+}
