@@ -1,5 +1,4 @@
 #!/usr/bin/python
-# -*- coding: utf-8 -*-
 
 import collections
 from BaseHTTPServer import BaseHTTPRequestHandler,HTTPServer
@@ -29,19 +28,46 @@ class myHandler(BaseHTTPRequestHandler):
 
 	def check_ums(self, counter, cList):
 		if counter['  '] > (0.10 * len(cList)):
-			return "Using the word 'um' over and over is detracting from your message.\n"
+			return "Cut it out with the pauses and the ums\n"
 		elif counter['  '] > (0.05 * len(cList)):
-			return "It seems like you are using several filler words. We suggest taking a deep breath instead of saying a word like ‘um’.\n"
+			return "Ummm... like You could use um's a bit less\n"
 		else:
-			return "You did a great job speaking fluently and clearly.\n"
+			return "Nice job with the ums and pauses=\n"
 
 	def check_likes(self, counter, cList):
 		if counter['like'] > (0.10 * len(cList)):
-			return "Using the word 'like' is making your pitch weaker."
+			return "Cut it out with the likes"
 		elif counter['like'] > (0.05 * len(cList)):
-			return "We suggest you use the word 'like' less frequently."
+			return "Ummm... like You could use like a bit less"
 		else:
-			return "Nice job avoiding using the common filler word 'like'!"
+			return "Nice job with the likes!"
+
+	def check_profanity(self, cList):
+		profanity = ["shit", "fuck", "damn", "bitch", "tits", "screwed", "hell", "piss", "bastard", "shut up", "stupid", "ass"]
+		for elem in cList:
+			if elem in profanity:
+				return "Please refrain from using profanity"
+			else:
+				return "Thanks for avoiding profanity!"
+
+	def check_threat(self, cList):
+		threat =  ["leave", "quit", "abandon"]
+		for elem in cList:
+			if elem in threat:
+				return "Please refrain from using threats to leave, etc."
+			else:
+				return "Thanks for avoiding threats!"
+
+	def check_fam(self, cList):
+		num = 0
+		fam = ["family", "kids", "kid", "child", "children", "husband", "mom", "mother"]
+		for elem in fam:
+			if elem in cList:
+				num += 1
+		if num >= 0.05 * len(cList):
+			return "Try not to focus too much on family! I want to hear about your achievements and goals"
+		else:
+			return "You sounds very self motivated and confident, good for you!"
 
 	def judge(self, cList):
 		counter = collections.Counter()
@@ -53,6 +79,10 @@ class myHandler(BaseHTTPRequestHandler):
 
 		response += self.check_ums(counter, cList)
 		response += '\n' + self.check_likes(counter, cList)
+		response += '\n' + self.check_profanity(cList)
+		response += '\n' + self.check_threat(cList)
+		response += '\n' + self.check_fam(cList)
+
 		return response
 
 
