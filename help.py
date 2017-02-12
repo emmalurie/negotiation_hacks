@@ -58,12 +58,14 @@ class myHandler(BaseHTTPRequestHandler):
 	#Handler for the GET requests
 	def do_GET(self):
 		self.send_response(200)
-		self.send_header('Content-type','text/html')
+		self.send_header('Content-type','application/json')
+		self.send_header('Access-Control-Allow-Origin','*')
 		self.end_headers()
-		cList = self.parse_text("hello.txt")
+		cList = self.parse_text("log.txt")
 		# Send the html message
 		# self.wfile.write(self.judge(cList))
 		self.wfile.write(self.judge(cList))
+		
 		return
 
 try:

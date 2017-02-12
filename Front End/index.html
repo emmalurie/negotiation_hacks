@@ -151,7 +151,8 @@ p#data {
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<div class="service-item">
 						<h3>Delivery</h3>
-						<p class = "feedback">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<button type="button" onclick="loadDoc()">Request data</button>
+						<p id="feedback"></p>
 						<a href="">learn more...</a>
 					</div>
 				</div>
@@ -324,7 +325,7 @@ p#data {
 	<footer id="footer">
 		<div class="container">
 			<div class="row text-center">
-				<p>&copy; 2017 Emma Lurie, Maxine Hood, Amber Skarjune, Sherry Xu </p>
+				<p>&copy; 2017 Emma Lurie, Maxine Hood, Amber Skarjune, Sherry Xu, Evelyn Chen</p>
 				<div class="credits">
 					<!--
 							All the links in the footer should remain intact.
@@ -342,16 +343,17 @@ p#data {
 
 <script>
 
-function request() {
-    var xhttp = new XMLHttpRequest();
-		xhttp.onreadystatechange = function(){
-			if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("demo").innerHTML = this.responseText;
-    }};
-		xhttp.open("GET", "ajax_info.txt", true);
-		xhttp.send();
-	}
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("feedback").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "http://localhost:8080", true);
+  xhttp.send();
 }
+
 
 // setTimeout(function(){ request(); }, 10000);
 
@@ -365,7 +367,7 @@ function request() {
 <script src="js/wow.js"></script>
 <script src="js/jquery.bxslider.min.js"></script>
 <script src="js/custom.js"></script>
-<script src="contactform/contactform.js"></script>
+
 
 </body>
 </html>
