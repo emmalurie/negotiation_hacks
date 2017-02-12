@@ -2,12 +2,12 @@ var fs = require('fs');
 
 var negotiate = function() {
 
-    if (fs.existsSync('../../../../downloads/video.webm')) {
+    if (fs.existsSync('../../downloads/video.webm')) {
         //var fs = require('fs'),
         console.log("Point A")
-        cloudconvert = new(require('cloudconvert'))('hwcepP9agCGP-8xWIa-lqjhc8KnPjAtnegMRNSy3q1qDHLow25ckwIueVyx73PWXr2oV0b9MxkBRoskc9VPVZg');
+        cloudconvert = new(require('cloudconvert'))('-WgHxJEKKYb2us305bs6tPqMOU4Yk_g7la5f6wz_3_vtwPeLbV2itvwdyZJtGeS9t6i34O_g7WXg5GrHMfZIrQ');
         console.log("Point B")
-        fs.createReadStream('../../../../downloads/video.webm')
+        fs.createReadStream('../../downloads/video.webm')
             .pipe(cloudconvert.convert({
                 "inputformat": "webm",
                 "outputformat": "flac",
@@ -17,12 +17,12 @@ var negotiate = function() {
 
             .pipe(fs.createWriteStream('outputfile.flac')).on('finish', function(file) {
 
-
+                  console.log("B2");
                 // Imports the Google Cloud client library
                 const Speech = require('@google-cloud/speech');
 
                 // Your Google Cloud Platform project ID
-                const projectId = 'canvas-cursor-158418';
+                const projectId = 'bamboo-depth-158505';
 
                 const speechClient = Speech({
                     projectId: projectId
@@ -52,7 +52,7 @@ var negotiate = function() {
                             }
                         })
                         console.log(`Transcription: ${transcription}`);
-                        fs.unlinkSync('../../../../downloads/video.webm');
+                        fs.unlinkSync('../../downloads/video.webm');
                         setTimeout(negotiate, 1000);
 
 
