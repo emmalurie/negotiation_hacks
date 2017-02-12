@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 import collections
 from BaseHTTPServer import BaseHTTPRequestHandler,HTTPServer
@@ -28,35 +29,34 @@ class myHandler(BaseHTTPRequestHandler):
 
 	def check_ums(self, counter, cList):
 		if counter['  '] > (0.10 * len(cList)):
-			return "Cut it out with the pauses and the ums\n"
+			return "Using the word 'um' over and over is detracting from your message.\n"
 		elif counter['  '] > (0.05 * len(cList)):
-			return "Ummm... like You could use um's a bit less\n"
+			return "It seems like you are using several filler words. We suggest taking a deep breath instead of saying a word like 'um'.\n"
 		else:
-			return "Nice job with the ums and pauses=\n"
+			return "You did a great job speaking fluently and clearly\n"
 
 	def check_likes(self, counter, cList):
 		if counter['like'] > (0.10 * len(cList)):
-			return "Cut it out with the likes"
+			return "Using the word 'like' is making your pitch weaker."
 		elif counter['like'] > (0.05 * len(cList)):
-			return "Ummm... like You could use like a bit less"
+			return "We suggest you use the word 'like' less frequently."
 		else:
-			return "Nice job with the likes!"
+			return "Nice job avoiding using the common filler word 'like'!"
 
 	def check_profanity(self, cList):
 		profanity = ["shit", "fuck", "damn", "bitch", "tits", "screwed", "hell", "piss", "bastard", "shut up", "stupid", "ass"]
 		for elem in cList:
 			if elem in profanity:
-				return "Please refrain from using profanity"
-			else:
-				return "Thanks for avoiding profanity!"
+				return "Please refrain from using profanity while negotiating."
+		return "Your language is appropriate for this conversation."
 
 	def check_threat(self, cList):
 		threat =  ["leave", "quit", "abandon"]
 		for elem in cList:
 			if elem in threat:
-				return "Please refrain from using threats to leave, etc."
+				return "We advise that you are more positive in your conversation instead of threatening to quit."
 			else:
-				return "Thanks for avoiding threats!"
+				return "Good job in staying positive!"
 
 	def check_fam(self, cList):
 		num = 0
@@ -65,9 +65,9 @@ class myHandler(BaseHTTPRequestHandler):
 			if elem in cList:
 				num += 1
 		if num >= 0.05 * len(cList):
-			return "Try not to focus too much on family! I want to hear about your achievements and goals"
+			return "Family is important, but we want to hear about your achievements and goals!"
 		else:
-			return "You sounds very self motivated and confident, good for you!"
+			return "You sound very self-motivated and confident!"
 
 	def judge(self, cList):
 		counter = collections.Counter()
