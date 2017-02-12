@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 import collections
 from BaseHTTPServer import BaseHTTPRequestHandler,HTTPServer
@@ -28,19 +29,19 @@ class myHandler(BaseHTTPRequestHandler):
 
 	def check_ums(self, counter, cList):
 		if counter['  '] > (0.10 * len(cList)):
-			return "Cut it out with the pauses and the ums\n"
+			return "Using the word 'um' over and over is detracting from your message.\n"
 		elif counter['  '] > (0.05 * len(cList)):
-			return "Ummm... like You could use um's a bit less\n"
+			return "It seems like you are using several filler words. We suggest taking a deep breath instead of saying a word like ‘um’.\n"
 		else:
-			return "Nice job with the ums and pauses=\n"
+			return "You did a great job speaking fluently and clearly.\n"
 
 	def check_likes(self, counter, cList):
 		if counter['like'] > (0.10 * len(cList)):
-			return "Cut it out with the likes"
+			return "Using the word 'like' is making your pitch weaker."
 		elif counter['like'] > (0.05 * len(cList)):
-			return "Ummm... like You could use like a bit less"
+			return "We suggest you use the word 'like' less frequently."
 		else:
-			return "Nice job with the likes!"
+			return "Nice job avoiding using the common filler word 'like'!"
 
 	def judge(self, cList):
 		counter = collections.Counter()
